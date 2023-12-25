@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block Titulo_nav_bar %}
+<div class="container">
+    <h1 class="f12" style="font-size: 50px;">
+        Inicia sesion
+    </h1>
+</div>
+{% endblock Titulo_nav_bar %}
+
+{% block contenido %}
+    <div style="margin-left: 25px; margin-top: 100px;">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Iniciar Sesión" />
+        </form>
+    </div>
+{% endblock contenido %}

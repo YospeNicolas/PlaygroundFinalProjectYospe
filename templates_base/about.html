@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Acerca de Campeones</title> 
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    </head>
+    <body class="container-about">
+        <div class="container">
+            <h1 class="f2">sCampeones: El lugar de las 3 estrellas</h1>
+            <div class="img-separator"></div>
+            <div class="p-about f11">
+                <p>Te ofrecemos este espacio para disfrutar de todo el contenido relacionado a la Selección Argentina, los campeones del mundo.
+                </p><br>
+                <p>Todos los datos, estadisticas, novedades, efemerides y memes relacionados a la Selección más grande del mundo. Compartamos esta locura todos juntos que sin importar el club, nuestro objetivo común nos une más alla de los colores.
+
+                </p><br>
+                <div> 
+                    <img src="{% static 'assets/img/argentina3estrellas.png' %}" style="max-width:160px"/>
+                </div><br>
+                <p>Nico Yospe, el creador detrás de Campeones, está totalmente comprometido a hacer de este sitio una experiencia fluida, divertida, y creativa para todos los usuarios.</p><br>
+                <p>En Campeones, creemos en la comunidad y en la idea de que cada aporte, por pequeño que parezca, es valioso. Te invitamos a unirte a nosotros en este emocionante viaje de descubrimiento y crecimiento.</p><br>
+                <p>Así que creá, comparti y sé parte de Campeones.</p><br>
+                <p>¡Bienvenido a Campeones!</p><br>
+                <a>Podes visitar los repositorios de Nico en su sitio en GitHub </a><a href="https://github.com/YospeNicolas">acá.</a><br>
+                <a href="{% url 'inicio' %}"><i class="bi bi-arrow-left-circle-fill"></i></a>
+            </div>
+        </div>        
+    </body>
+</html>

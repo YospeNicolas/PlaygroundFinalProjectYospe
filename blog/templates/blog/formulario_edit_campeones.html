@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block Titulo_nav_bar %}
+<div class="container">
+    <h1 class="f12" style="font-size: 50px;">
+        Edita tu Campeones
+    </h1>
+</div>
+{% endblock Titulo_nav_bar %}
+
+{% block contenido %}
+  <div style="margin-left: 25px;">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <table>
+      {{ formulario.as_table }}
+      </table>
+      <input class="btn btn-success" type="submit" value="Guardar"/>&nbsp;&nbsp;
+      <a href="{% url 'wall' %}">Cancelar</a>
+    </form>    
+  </div>
+{% endblock contenido %}

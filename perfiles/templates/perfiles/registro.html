@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block Titulo_nav_bar %}
+  <div class="container">
+      <h1 class="f12" style="font-size: 50px;">
+        Registro de usuario
+      </h1>
+  </div>
+{% endblock Titulo_nav_bar %}
+
+{% block contenido %}
+  <div style="margin-left: 25px; margin-top: 50px;">
+    <form method="post">
+      {% csrf_token %}
+        <table>
+          {{ form.as_table }}
+        </table>
+      <input type="submit" value="Registrarse" />
+    </form>
+  </div>
+{% endblock contenido %}

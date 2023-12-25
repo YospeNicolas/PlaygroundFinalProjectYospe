@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block Titulo_nav_bar %}
+<div class="container">
+    <h1 class="f12" style="font-size: 50px;">
+        Detalle de Campeones
+    </h1>
+</div>
+{% endblock Titulo_nav_bar %}
+
+{% block contenido %}
+
+<table class="table">
+    <tr>
+        <td> <img src="{{avatar.imagen.url}}" style="max-width:50px"/> </td>
+        <td style="font-size: large; vertical-align: middle;"> {{ articulo.autor }} <a style="font-size: small;"> ({{ articulo.fecha }}) </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td style="font-size: x-large;"> {{ articulo.titulo }} </td> 
+    </tr>
+    <tr> 
+        <td></td>
+        <td style="font-size: large;"> {{ articulo.subtitulo }} </td> 
+    </tr>
+    <tr>
+        <td></td>
+        <td style="font-size: medium;"> {{ articulo.cuerpo | linebreaks }} </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td> 
+            <img src="{{articulo.imagen.url}}" style="max-width:450px"/> 
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>            
+            {% if user == articulo.autor %}                           
+                {% csrf_token %}
+                <a href="{% url 'borrar_campeones' articulo.id %}"><i class="bi bi-trash bi-buttons"></i></a>
+                <a href="{% url 'editar_campeones' articulo.id %}"><i class="bi bi-pencil-square bi-buttons"></i></a>
+            {% endif %}
+            <a href="{% url 'wall' %}"><i class="bi bi-arrow-left-circle-fill bi-buttons">Volver al muro de Campeones</i></a>
+        </td>
+    </tr>
+</table>
+
+{% endblock contenido %}

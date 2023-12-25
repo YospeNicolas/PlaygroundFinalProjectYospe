@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<header class="masthead" style="background-image: url('/static/assets/img/Messi.jpg');">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-black">
+                    <!-- Page heading-->
+                    {% block solo_bienvenida %}
+                    <h1 class="f6" style="font-size: 100px; text-align: center; margin-right: 50px;">Bienvenido a Campeones</h1>
+                    <div>
+                        <img src="{{user.avatar.imagen.url}}" style="max-width:150px">
+                    </div>
+                    <h2> {{ user.get_full_name }} </h2>                    
+                    <div class="container">
+                        <a class="btn btn-primary" href="{% url 'wall' %}">ENTRAR</a>
+                    </div>
+                    {% endblock solo_bienvenida %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock contenido %}
